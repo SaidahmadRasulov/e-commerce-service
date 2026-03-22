@@ -27,10 +27,11 @@ product_router.get("/", getProducts);
 product_router.get("/:id", getProductById);
 product_router.put(
   "/:id",
-  checkPermission("edit_product"),
+  authCheck,
+  checkPermission("update_product"),
   upload.single("image"),
   updateProduct,
 );
-product_router.delete("/:id", checkPermission("delete_product"), deleteProduct);
+product_router.delete("/:id", authCheck, checkPermission("delete_product"), deleteProduct);
 
 export default product_router;

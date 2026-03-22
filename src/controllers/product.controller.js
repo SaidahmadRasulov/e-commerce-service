@@ -14,6 +14,7 @@ export const createProduct = async (req, res) => {
       price,
       image: imageUrl,
       stock,
+      userId: req.user.id,
     });
 
     res.status(201).json({message: "Product created successful", product});

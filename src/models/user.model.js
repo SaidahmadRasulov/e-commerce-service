@@ -22,7 +22,7 @@ const User = sequelize.define(
     },
     groupId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      defaultValue: 3, // default to 'user' group
     },
   },
   {

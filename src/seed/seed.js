@@ -7,6 +7,9 @@ const PERMISSION_DEFS = [
   { name: "delete_product", code_name: "delete" },
   { name: "view_product", code_name: "view" },
   { name: "manage_groups", code_name: "mng" },
+  { name: "create_group", code_name: "create_group" },
+  { name: "update_group", code_name: "update_group" },
+  { name: "delete_group", code_name: "delete_group" },
 ];
 
 export const seedDatabase = async () => {
