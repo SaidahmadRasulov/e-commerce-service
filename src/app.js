@@ -5,6 +5,7 @@ import { sequelize } from "./config/db.js";
 import dotenv from "dotenv";
 import "./models/index.js";
 import router from "./routes/index.js";
+import { uploadsDir } from "./middlewares/upload.js";
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ app.use(
   }),
 );
 app.use("/api", router);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(uploadsDir));
 
 sequelize
   .authenticate()
